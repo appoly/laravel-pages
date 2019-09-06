@@ -1,0 +1,31 @@
+.wysiwyg-editor {
+    .menubar {
+        margin-top: 15px;
+        margin-bottom: 5px;
+
+        a {
+            -webkit-appearance: none;
+            background: none;
+            border-radius: 10px;
+            border: 0;
+            padding: 5px 10px;
+            color: black;
+            display: inline-block;
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.5);
+            }
+
+            img {
+                height: 16px;
+            }
+        }
+    }
+    .ProseMirror {
+        color: black;
+        background: rgba(0, 0, 0, 0.03);
+        box-shadow: 0px 15px 21px -1px rgba(0, 0, 0, 0.004);
+        padding: 20px;
+        border-radius: 13px;
+    }
+}

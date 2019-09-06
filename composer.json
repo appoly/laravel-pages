@@ -1,0 +1,23 @@
+{
+    "name": "appoly/laravel-pages",
+    "description": "A CMS for laravel to easily create pages for your web application",
+    "authors": [
+        {
+            "name": "Calum",
+            "email": "calum@appoly.co.uk"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Appoly\\LaravelPages\\" : "src/"
+        }
+    },
+    "extra":{
+        "laravel": {
+            "providers": [
+                "Appoly\\LaravelPages\\LaravelPagesServiceProvider"
+            ]
+        }
+    }
+}

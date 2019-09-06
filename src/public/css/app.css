@@ -1,0 +1,32 @@
+.wysiwyg-editor .menubar {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.wysiwyg-editor .menubar a {
+  -webkit-appearance: none;
+  background: none;
+  border-radius: 10px;
+  border: 0;
+  padding: 5px 10px;
+  color: black;
+  display: inline-block;
+}
+
+.wysiwyg-editor .menubar a:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.wysiwyg-editor .menubar a img {
+  height: 16px;
+}
+
+.wysiwyg-editor .ProseMirror {
+  color: black;
+  background: rgba(0, 0, 0, 0.03);
+  -webkit-box-shadow: 0px 15px 21px -1px rgba(0, 0, 0, 0.004);
+          box-shadow: 0px 15px 21px -1px rgba(0, 0, 0, 0.004);
+  padding: 20px;
+  border-radius: 13px;
+}
+
