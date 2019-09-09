@@ -5,7 +5,7 @@ Laravel pages is a package that makes creating custom pages for your web app eas
 ## Installation 
 
     composer require appoly/laravel-pages
-   
+       
 ## Assets
 
 To publish the packages assets run the following command.
@@ -13,6 +13,8 @@ To publish the packages assets run the following command.
     php artisan vendor:publish --tag=public --force
 
 To include the packages JS and CSS you need to add the following to the top of your layout.app file
+
+    @yield('scripts')
 
 ## Config
 
