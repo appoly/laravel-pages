@@ -40,7 +40,12 @@ class PagesController extends Controller
      */
     public function store(Request $request)
     {
-        $page = Page::create($request->all());
+        $page = Page::create([
+            'title' => $request->title,
+            'body' => $request->body,
+            'slug' => $request->slug,
+            'views' => 0
+        ]);
 
         return redirect()->route('laravel-pages.show', $page->slug);
     }
@@ -54,6 +59,8 @@ class PagesController extends Controller
     public function show($slug)
     {
         $page = Page::where('slug', $slug)->first();
+
+        $page->increment('views');
 
         return view('laravel-pages::pages.show', compact('page'));
     }
@@ -91,12 +98,15 @@ class PagesController extends Controller
      * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Page $page)
+    public function destroy($id)
     {
-        //
+        $page = Page::find($id);
+        $page->delete();
+        return redirect()->route('pages.index')->with('success', 'Page has been deleted.');   ;
     }
 
-    public function imageUpload(Request $request){
+    public function imageUpload(Request $request)
+    {
 
         if ($files = $request->file('file')) {
             $location = 'laravel_pages/images';
@@ -105,5 +115,4 @@ class PagesController extends Controller
         }
         return env('AWS_URL') . $data['file'];
     }
-
 }

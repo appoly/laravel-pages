@@ -17,6 +17,7 @@
                     <tr>
                         <th>Page Title</th>
                         <th>URL</th>
+                        <th>Views</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -25,17 +26,35 @@
                     @foreach ($pages as $page)
                     <tr>
                         <td>{{ $page->title }}</td>
-                        <td><a href="{{ route('laravel-pages.show', $page->slug) }}">{{ route('laravel-pages.show', $page->slug) }}</a>
+                        <td>
+                            <a href="{{ route('laravel-pages.show', $page->slug) }}">{{ route('laravel-pages.show', $page->slug) }}</a>
                         </td>
                         <td>
-                            <a href="{{ route('pages.edit', $page) }}" class='btn btn-primary'>Edit</a>
+                            {{ $page->views }}
+                        </td>
+                        <td>
+                            <span class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <i class="fa fa-cog"></i>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="{{ route('pages.edit', $page) }}">Edit
+                                        Page</a>
+
+                                        <form action="{{ route('pages.destroy', $page) }}" method="POST">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button class="dropdown-item deleter text-danger">Delete Page</button>
+                                        </form>
+                                </div>
+                            </span>
                         </td>
                     </tr>
                     @endforeach
 
                 </tbody>
             </table>
-
         </div>
     </div>
 </div>
