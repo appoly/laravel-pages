@@ -22,7 +22,7 @@ return [
     | Here you may specify which editor your pages form should use.
     |
     | Supported: "textarea", "tiptap"
-    | tiptap - requires installation see readme
+    | 
     */
 
     'editor' => 'tiptap',
@@ -42,6 +42,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | View
+    |--------------------------------------------------------------------------
+    |
+    | Here you can define a custom view for your pages.
+    | When creating your view the page will come through as $page
+    | Keep blank to use the default
+    |
+    */
+
+    'custom_view' => '',
+
+    /*
+    |--------------------------------------------------------------------------
     | S3
     |--------------------------------------------------------------------------
     |
@@ -58,5 +71,25 @@ return [
     'AWS_DEFAULT_REGION'=>env('AWS_DEFAULT_REGION', 'us-east-1'),
 
     'AWS_BUCKET' => env('AWS_BUCKET', ''),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Partials
+    |--------------------------------------------------------------------------
+    |
+    | Here you can include an array of partials that you would like
+    | included on you page. An example can be seen below
+    |   'partials' => [
+    |       [
+    |           'name' => 'Contact Form',
+    |           'location' => 'partials.contact-form'
+    |       ]
+    |   ]
+    | WARNING: ALTERING THESE AFTER PRODUCTION WILL CAUSE ERRORS
+    */
+
+    'partials' => [
+ 
+    ]
 
 ];

@@ -3,25 +3,10 @@
     <div class="modal-content">
       <h1>Upload a image</h1>
       <header class="tab-header">
-        <!-- <div @click="tab = 1;" :class="{ active: tab == 1 }">Link</div> -->
         <div @click="tab = 0;" :class="{ active: tab == 0 }">
           Upload a file by clicking below or dragging and dropping the image.
         </div>
-        <!-- <div @click="tab = 2;" :class="{ active: tab == 2 }">
-          Upload (Simple)
-        </div> -->
       </header>
-
-      <!-- <div v-if="tab == 1">
-        <p>Here is a test image URL</p>
-        <pre>https://i.imgur.com/0ogkTp7.jpg</pre>
-        <label for="url">Image URL:</label>
-        <input v-model="imageSrc" id="url" />
-      </div>
-      <div v-if="tab == 2">
-        <label for="up">Really simple input upload:</label>
-        <input type="file" @change="fileChange" id="up" ref="file" />
-      </div> -->
       <div v-if="tab == 0">
         <vue-dropzone
           ref="myVueDropzone"

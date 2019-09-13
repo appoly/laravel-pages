@@ -7,7 +7,6 @@ Vue.component(
     require('./components/TipTapComponent.vue').default
 );
 
-
 const app = new Vue({
     el: '#app'
 });

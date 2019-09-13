@@ -19,6 +19,8 @@ class CreatePagesTable extends Migration
             $table->text('body');
             $table->string('slug');
             $table->integer('views')->nullable();
+            $table->string('header_image')->nullable();
+            $table->integer('partial')->nullable();
             $table->timestamps();
         });
     }

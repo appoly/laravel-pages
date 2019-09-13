@@ -8,11 +8,14 @@
 @section('content')
 <div class="container">
     <div class="card">
+        <div class="card-header">
+            Create a new page
+        </div>
         <div class="card-body">
 
-            <form action="{{ route('pages.store') }}" method="POST">
+            <form action="{{ route('pages.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                @include('laravel-pages::pages.form')
+                @include('laravel-pages::pages.partials.form')
             </form>
         </div>
     </div>

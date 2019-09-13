@@ -40,12 +40,14 @@ class PagesController extends Controller
      */
     public function store(Request $request)
     {
-        $page = Page::create([
-            'title' => $request->title,
-            'body' => $request->body,
-            'slug' => $request->slug,
-            'views' => 0
-        ]);
+        if ($files = $request->file('header_image')) {
+            $location = 'laravel_pages/images';
+            $data['file'] = $files->store($location, 's3');
+            Storage::disk('s3')->setVisibility($data['file'], 'public');
+            $request->merge(['header_image'=> $data['file']]);
+        }
+
+        $page = Page::create($request->all());
 
         return redirect()->route('laravel-pages.show', $page->slug);
     }
@@ -59,10 +61,14 @@ class PagesController extends Controller
     public function show($slug)
     {
         $page = Page::where('slug', $slug)->first();
-
         $page->increment('views');
 
+        if(config('laravel_pages.custom_view') !== ''){
+            return view(config('laravel_pages.custom_view'), compact('page'));
+        }
+
         return view('laravel-pages::pages.show', compact('page'));
+
     }
 
     /**
@@ -107,7 +113,6 @@ class PagesController extends Controller
 
     public function imageUpload(Request $request)
     {
-
         if ($files = $request->file('file')) {
             $location = 'laravel_pages/images';
             $data['file'] = $files->store($location, 's3');
