@@ -1,13 +1,12 @@
 var path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
-
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
     mode: 'development',
     entry: './src/resources/assets/js/laravel_pages.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'laravel_pages.js'
+        filename: 'laravel_pages.js',
     },
     module: {
         rules: [
@@ -18,13 +17,13 @@ module.exports = {
             },
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
-            }
-        ]
+                loader: 'vue-loader',
+            },
+        ],
     },
     plugins: [
         // make sure to include the plugin!
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
     ],
     resolve: {
         extensions: ['.css', '.js', '.ts', '.vue'],

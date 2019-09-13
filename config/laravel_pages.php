@@ -1,4 +1,5 @@
 <?php
+
 return [
 
     /*
@@ -22,7 +23,7 @@ return [
     | Here you may specify which editor your pages form should use.
     |
     | Supported: "textarea", "tiptap"
-    | 
+    |
     */
 
     'editor' => 'tiptap',
@@ -89,7 +90,7 @@ return [
     */
 
     'partials' => [
- 
-    ]
+
+    ],
 
 ];
