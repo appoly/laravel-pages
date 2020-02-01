@@ -14,6 +14,7 @@ return [
 
     'admin_pages_route' => '/admin/pages',
     'admin_route_prefix' => 'admin.',
+    'admin_middle_ware' => ['web', 'auth'],
     'view_pages_route' => '/page/{slug}',
 
     /*
