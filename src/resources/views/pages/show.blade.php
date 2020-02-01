@@ -1,4 +1,4 @@
-@extends(config('laravel_pages.layout_file'))
+@extends(config('laravel_pages.layout_file_frontend'))
 
 @section('content')
 

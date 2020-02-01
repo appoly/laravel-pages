@@ -42,6 +42,7 @@ return [
     */
 
     'layout_file' => 'layouts.app',
+    'layout_file_frontend' => 'layouts.frontend',
 
     /*
     |--------------------------------------------------------------------------
