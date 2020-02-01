@@ -17,7 +17,7 @@ class CreatePagesTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('body');
-            $table->string('slug');
+            $table->string('slug')->index();
             $table->integer('views')->nullable();
             $table->string('header_image')->nullable();
             $table->integer('partial')->nullable();
