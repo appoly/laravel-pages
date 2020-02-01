@@ -61,7 +61,7 @@ class PagesController extends Controller
     {
         $page = Page::where('slug', $slug)->first();
         if(!$page) {
-            abort(403, 'Page not found.');
+            abort(404, 'Page not found.');
         }
         $page->increment('views');
 
