@@ -13,6 +13,7 @@ return [
     */
 
     'admin_pages_route' => '/admin/pages',
+    'admin_route_prefix' => 'admin.',
     'view_pages_route' => '/page/{slug}',
 
     /*
