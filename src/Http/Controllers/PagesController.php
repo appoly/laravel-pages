@@ -60,6 +60,9 @@ class PagesController extends Controller
     public function show($slug)
     {
         $page = Page::where('slug', $slug)->first();
+        if(!$page) {
+            abort(403, 'Page not found.');
+        }
         $page->increment('views');
 
         if (config('laravel_pages.custom_view') !== '') {
