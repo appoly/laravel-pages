@@ -27,7 +27,7 @@
                     <tr>
                         <td>{{ $page->title }}</td>
                         <td>
-                            <a href="{{ route(config('laravel_pages.admin_route_prefix').'laravel-pages.show', $page->slug) }}">{{ route(config('laravel_pages.admin_route_prefix').'laravel-pages.show', $page->slug) }}</a>
+                            <a href="{{ route('laravel-pages.show', $page->slug) }}">{{ route('laravel-pages.show', $page->slug) }}</a>
                         </td>
                         <td>
                             {{ $page->views }}
