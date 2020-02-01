@@ -13,7 +13,7 @@
         </div>
         <div class="card-body">
 
-            <form action="{{ route('pages.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('config('laravel_pages.admin_route_prefix').'pages.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @include('laravel-pages::pages.partials.form')
             </form>

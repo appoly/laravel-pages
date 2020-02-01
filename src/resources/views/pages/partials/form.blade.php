@@ -48,6 +48,6 @@
 
 
 <div class="float-right mt-3">
-    <a href="{{ route('pages.index') }}" class="btn btn-danger">Cancel</a>
+    <a href="{{ route(config('laravel_pages.admin_route_prefix').'pages.index') }}" class="btn btn-danger">Cancel</a>
     <button type="submit" class="btn btn-primary">Submit</button>
 </div>

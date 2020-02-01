@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body">
 
-            <form action="{{ route('pages.update', $page) }}" method="POST">
+            <form action="{{ route(config('laravel_pages.admin_route_prefix').'pages.update', $page) }}" method="POST">
                 @csrf
                 @method('PATCH')
                 @include('laravel-pages::pages.form')
