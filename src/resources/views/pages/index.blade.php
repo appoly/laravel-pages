@@ -7,7 +7,7 @@
     <div class="card">
         <div class="card-header">
             <div class="float-right">
-                <a href="{{ route('pages.create') }}" class="btn btn-primary">Create</a>
+                <a href="{{ route(config('laravel_pages.admin_route_prefix').'pages.create') }}" class="btn btn-primary">Create</a>
             </div>
             <h2>Pages</h2>
         </div>
@@ -27,7 +27,7 @@
                     <tr>
                         <td>{{ $page->title }}</td>
                         <td>
-                            <a href="{{ route('laravel-pages.show', $page->slug) }}">{{ route('laravel-pages.show', $page->slug) }}</a>
+                            <a href="{{ route(config('laravel_pages.admin_route_prefix').'laravel-pages.show', $page->slug) }}">{{ route(config('laravel_pages.admin_route_prefix').'laravel-pages.show', $page->slug) }}</a>
                         </td>
                         <td>
                             {{ $page->views }}
@@ -39,10 +39,10 @@
                                     <i class="fa fa-cog"></i>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="{{ route('pages.edit', $page) }}">Edit
+                                    <a class="dropdown-item" href="{{ route(config('laravel_pages.admin_route_prefix').'pages.edit', $page) }}">Edit
                                         Page</a>
 
-                                        <form action="{{ route('pages.destroy', $page) }}" method="POST">
+                                        <form action="{{ route(config('laravel_pages.admin_route_prefix').'pages.destroy', $page) }}" method="POST">
                                             @method('DELETE')
                                             @csrf
                                             <button class="dropdown-item deleter text-danger">Delete Page</button>
