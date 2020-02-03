@@ -2,10 +2,11 @@
 
 Laravel pages is a package that makes creating custom pages for your web app easy!
 
-## Installation 
+## Installation
 
     composer require appoly/laravel-pages
-       
+
+
 ## Assets
 
 To publish the packages assets run the following command.
@@ -20,7 +21,7 @@ To include the packages JS and CSS you need to add the following to the top of y
 
 To publish the packages config file run the following command.
 
-    php artisan vendor:publish --tag=config --force
+    php artisan vendor:publish --tag=laravel-pages-config --force
 
 To include the packages JS and CSS you need to add the following to the top of your layout.app file
 
@@ -30,9 +31,9 @@ Once you've installed this package new routes will be created for your web app.
 To see all of your apps pages navigate to
 
     /admin/pages
-    
-From there you can create and edit your pages. To view your pages you can navigate to 
+
+From there you can create and edit your pages. To view your pages you can navigate to
 
     /page/{slug}
-    
+
 These routes are editable via the config file.
