@@ -1,9 +1,9 @@
-@extends(config('laravel_pages.layout_file'))
+@extends(config('laravel_pages.layout_file_frontend'))
 
 @section('content')
 
 <div class="container">
-    <div class="page-content my-4">
+    <div class="page-content my-4 pt-5">
         <div class="title mb-4">
             <h1>{{ $page->title }}</h1>
         </div>

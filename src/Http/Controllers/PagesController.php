@@ -2,11 +2,10 @@
 
 namespace Appoly\LaravelPages\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Appoly\LaravelPages\Models\Page;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
-
 
 class PagesController extends Controller
 {
@@ -61,14 +60,16 @@ class PagesController extends Controller
     public function show($slug)
     {
         $page = Page::where('slug', $slug)->first();
+        if(!$page) {
+            abort(404, 'Page not found.');
+        }
         $page->increment('views');
 
-        if(config('laravel_pages.custom_view') !== ''){
+        if (config('laravel_pages.custom_view') !== '') {
             return view(config('laravel_pages.custom_view'), compact('page'));
         }
 
         return view('laravel-pages::pages.show', compact('page'));
-
     }
 
     /**
@@ -80,6 +81,7 @@ class PagesController extends Controller
     public function edit($id)
     {
         $page = Page::find($id);
+
         return view('laravel-pages::pages.edit', compact('page'));
     }
 
@@ -108,7 +110,8 @@ class PagesController extends Controller
     {
         $page = Page::find($id);
         $page->delete();
-        return redirect()->route('pages.index')->with('success', 'Page has been deleted.');   ;
+
+        return redirect()->route('pages.index')->with('success', 'Page has been deleted.');
     }
 
     public function imageUpload(Request $request)
@@ -118,6 +121,7 @@ class PagesController extends Controller
             $data['file'] = $files->store($location, 's3');
             Storage::disk('s3')->setVisibility($data['file'], 'public');
         }
-        return env('AWS_URL') . $data['file'];
+
+        return env('AWS_URL').$data['file'];
     }
 }
