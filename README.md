@@ -23,8 +23,6 @@ To publish the packages config file run the following command.
 
     php artisan vendor:publish --tag=laravel-pages-config --force
 
-To include the packages JS and CSS you need to add the following to the top of your layout.app file
-
 ## How to use
 
 Once you've installed this package new routes will be created for your web app.
