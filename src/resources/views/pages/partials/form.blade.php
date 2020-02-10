@@ -25,11 +25,11 @@
 
 @switch(config('laravel_pages.editor'))
 @case('tiptap')
-<page-body-editor :body="''" name="body"></page-body-editor>
+<page-body-editor :body="{{ isset($page) ? $page->body : '' }}" name="body"></page-body-editor>
 @break
 @default
 <label for="body">Page Body</label>
-<textarea name='body' class='form-control'></textarea>
+<textarea name='body' class='form-control'>{{ isset($page) ? $page->body : '' }}</textarea>
 @endswitch
 
 @if (!empty(config('laravel_pages.partials')))
