@@ -43,7 +43,7 @@ class PagesController extends Controller
             $location = 'laravel_pages/images';
             $data['file'] = $files->store($location, 's3');
             Storage::disk('s3')->setVisibility($data['file'], 'public');
-            $request->merge(['header_image'=> $data['file']]);
+            $request->merge(['header_image' => $data['file']]);
         }
 
         $page = Page::create($request->all());
@@ -60,7 +60,7 @@ class PagesController extends Controller
     public function show($slug)
     {
         $page = Page::where('slug', $slug)->first();
-        if(!$page) {
+        if (!$page) {
             abort(404, 'Page not found.');
         }
         $page->increment('views');
@@ -111,7 +111,7 @@ class PagesController extends Controller
         $page = Page::find($id);
         $page->delete();
 
-        return redirect()->route('pages.index')->with('success', 'Page has been deleted.');
+        return redirect()->route('admin.pages.index')->with('success', 'Page has been deleted.');
     }
 
     public function imageUpload(Request $request)
@@ -122,6 +122,6 @@ class PagesController extends Controller
             Storage::disk('s3')->setVisibility($data['file'], 'public');
         }
 
-        return env('AWS_URL').$data['file'];
+        return env('AWS_URL') . $data['file'];
     }
 }
