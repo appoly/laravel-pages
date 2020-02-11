@@ -8,16 +8,16 @@
             <h1>{{ $page->title }}</h1>
         </div>
 
-        @if (isset($page->header_image))   
-            <div class="header_image mb-3">
-                <img class="img-fluid" src="{{ $page->header_image }}" alt="">
-            </div>
+        @if (isset($page->header_image))
+        <div class="header_image mb-3">
+            <img class="img-fluid" src="{{ $page->header_image }}" alt="">
+        </div>
         @endif
 
         {!! $page->body !!}
 
         @if (isset($page->partial))
-            @include(config('laravel_pages.partials.'. $page->partial .'.location'))
+        @include(config('laravel_pages.partials.'. $page->partial .'.location'))
         @endif
     </div>
 </div>

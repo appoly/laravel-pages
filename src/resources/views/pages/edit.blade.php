@@ -13,7 +13,7 @@
             <form action="{{ route(config('laravel_pages.admin_route_prefix').'pages.update', $page) }}" method="POST">
                 @csrf
                 @method('PATCH')
-                @include('laravel-pages::pages.form')
+                @include('laravel-pages::pages.partials.form')
             </form>
         </div>
     </div>

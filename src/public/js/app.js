@@ -1875,59 +1875,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -1943,7 +1890,12 @@ __webpack_require__.r(__webpack_exports__);
       this.htmlContent = this.body;
     }
   },
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    if (this.body !== null) {
+      this.editor.setContent(this.body);
+      this.htmlContent = this.body;
+    }
+  },
   data: function data() {
     var _this = this;
 
@@ -1952,19 +1904,19 @@ __webpack_require__.r(__webpack_exports__);
         extensions: [new tiptap_extensions__WEBPACK_IMPORTED_MODULE_2__["Blockquote"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_2__["BulletList"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_2__["CodeBlock"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_2__["HardBreak"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_2__["Heading"]({
           levels: [1, 2, 3]
         }), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_2__["HorizontalRule"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_2__["ListItem"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_2__["OrderedList"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_2__["TodoItem"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_2__["TodoList"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_2__["Link"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_2__["Bold"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_2__["Code"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_2__["Italic"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_2__["Strike"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_2__["Underline"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_2__["History"](), new tiptap_extensions__WEBPACK_IMPORTED_MODULE_2__["Image"]()],
-        content: '',
+        content: "",
         onUpdate: function onUpdate(_ref) {
           var getHTML = _ref.getHTML;
           _this.htmlContent = getHTML();
         }
       }),
-      htmlContent: ''
+      htmlContent: ""
     };
   },
   beforeDestroy: function beforeDestroy() {
     this.editor.destroy();
   },
-  props: ['body', 'name'],
+  props: ["body", "name"],
   methods: {
     openModal: function openModal(command) {
       this.$refs.ytmodal.showModal(command);
@@ -32277,7 +32229,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("\n                H1\n            ")]
+                    [_vm._v("H1")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -32292,7 +32244,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("\n                H2\n            ")]
+                    [_vm._v("H2")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -32307,7 +32259,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("\n                H3\n            ")]
+                    [_vm._v("H3")]
                   ),
                   _vm._v(" "),
                   _c(

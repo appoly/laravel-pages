@@ -25,7 +25,7 @@
 
 @switch(config('laravel_pages.editor'))
 @case('tiptap')
-<page-body-editor :body="''" name="body"></page-body-editor>
+<page-body-editor :body="'{!! $page->body !!}'" name="body"></page-body-editor>
 @break
 @default
 <label for="body">Page Body</label>
@@ -38,7 +38,7 @@
     <select id="partial" class="custom-select" name="partial">
         <option value="select">Select</option>
         @foreach (config('laravel_pages.partials') as $key => $partial)
-            <option value="{{ $key }}">{{ $partial }}</option>
+        <option value="{{ $key }}">{{ $partial }}</option>
         @endforeach
     </select>
 </div>
