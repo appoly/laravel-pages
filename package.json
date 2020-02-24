@@ -12,7 +12,7 @@
         "lint:fix": "eslint --ext .js,.vue src/resources --fix"
     },
     "devDependencies": {
-        "axios": "^0.18",
+        "axios": "^0.19",
         "browser-sync": "^2.23.6",
         "browser-sync-webpack-plugin": "^2.0.1",
         "cross-env": "^5.1",
