@@ -1,35 +1,36 @@
 <template>
-  <div class="modal" v-if="show">
-    <div class="modal-content">
-      <h1>Upload a image</h1>
-      <header class="tab-header">
-        <div @click="tab = 0;" :class="{ active: tab == 0 }">
-          Upload a file by clicking below or dragging and dropping the image.
-        </div>
-      </header>
-      <div v-if="tab == 0">
-        <vue-dropzone
-          ref="myVueDropzone"
-          id="dropzone"
-          @vdropzone-success="vfileUploaded"
-          :options="dropzoneOptions"
-        >
-        </vue-dropzone>
-      </div>
+	<div v-if="show" class="modal">
+		<div class="modal-content">
+			<h1>Upload a image</h1>
+			<header class="tab-header">
+				<div :class="{ active: tab == 0 }" @click="tab = 0;">
+					Upload a file by clicking below or dragging and dropping the image.
+				</div>
+			</header>
+			<div v-if="tab == 0">
+				<vue-dropzone
+					id="dropzone"
+					ref="myVueDropzone"
+					:options="dropzoneOptions"
+					@vdropzone-success="vfileUploaded"
+				/>
+			</div>
 
-      <footer class="modal-footer">
-        <button
-          @click="insertImage"
-          class="btn btn-primary"
-          :title="validImage ? '' : 'Image URL needs to be valid'"
-          :disabled="!validImage"
-        >
-          Add Image
-        </button>
-        <button @click="show = false;" class="btn btn-danger">Close</button>
-      </footer>
-    </div>
-  </div>
+			<footer class="modal-footer">
+				<button
+					class="btn btn-primary"
+					:title="validImage ? '' : 'Image URL needs to be valid'"
+					:disabled="!validImage"
+					@click="insertImage"
+				>
+					Add Image
+				</button>
+				<button class="btn btn-danger" @click="show = false;">
+					Close
+				</button>
+			</footer>
+		</div>
+	</div>
 </template>
 
 <script>
