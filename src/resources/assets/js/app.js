@@ -10,7 +10,7 @@ const app = new Vue({
 
 //Generate slug from title
 //TODO make a request to check if it's unique
-$('input#title').change(function() {
+$('input#title').change(function () {
     var urlInput = $('input#slug');
     if (urlInput.val() == '') {
         urlInput.val(
@@ -23,7 +23,7 @@ $('input#title').change(function() {
     }
 });
 
-$('input[type="file"]').on('change', function(e) {
+$('input[type="file"]').on('change', function (e) {
     var fileName = e.target.files[0].name;
     $('.custom-file-label').text(fileName);
 });

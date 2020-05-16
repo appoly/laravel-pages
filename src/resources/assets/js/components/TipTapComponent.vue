@@ -1,132 +1,130 @@
 <template>
-	<div class="wysiwyg-editor">
-		<Modal ref="ytmodal" @onConfirm="addCommand" />
-		<input
-			:id="name"
-			v-model="htmlContent"
-			type="hidden"
-			:name="name"
-		>
-		<editor-menu-bar v-slot="{ commands, isActive }" :editor="editor">
-			<div class="menubar">
-				<a
-					href="javascript://"
-					class="menubar__button"
-					:class="{ 'is-active': isActive.bold() }"
-					@click="commands.bold"
-				>
-					<img src="/vendor/appoly/laravel-pages/img/wysiwyg/bold.svg">
-				</a>
-				<a
-					href="javascript://"
-					class="menubar__button"
-					:class="{ 'is-active': isActive.italic() }"
-					@click="commands.italic"
-				>
-					<img src="/vendor/appoly/laravel-pages/img/wysiwyg/italic.svg">
-				</a>
-				<a
-					href="javascript://"
-					class="menubar__button"
-					:class="{ 'is-active': isActive.strike() }"
-					@click="commands.strike"
-				>
-					<img src="/vendor/appoly/laravel-pages/img/wysiwyg/strike.svg">
-				</a>
-				<a
-					href="javascript://"
-					class="menubar__button"
-					:class="{ 'is-active': isActive.underline() }"
-					@click="commands.underline"
-				>
-					<img src="/vendor/appoly/laravel-pages/img/wysiwyg/underline.svg">
-				</a>
-				<a
-					href="javascript://"
-					class="menubar__button"
-					:class="{ 'is-active': isActive.code() }"
-					@click="commands.code"
-				>
-					<img src="/vendor/appoly/laravel-pages/img/wysiwyg/code.svg">
-				</a>
-				<a
-					href="javascript://"
-					class="menubar__button"
-					:class="{ 'is-active': isActive.paragraph() }"
-					@click="commands.paragraph"
-				>
-					<img src="/vendor/appoly/laravel-pages/img/wysiwyg/paragraph.svg">
-				</a>
-				<a
-					href="javascript://"
-					class="menubar__button"
-					:class="{ 'is-active': isActive.heading({ level: 1 }) }"
-					@click="commands.heading({ level: 1 })"
-				>H1</a>
-				<a
-					href="javascript://"
-					class="menubar__button"
-					:class="{ 'is-active': isActive.heading({ level: 2 }) }"
-					@click="commands.heading({ level: 2 })"
-				>H2</a>
-				<a
-					href="javascript://"
-					class="menubar__button"
-					:class="{ 'is-active': isActive.heading({ level: 3 }) }"
-					@click="commands.heading({ level: 3 })"
-				>H3</a>
-				<a
-					href="javascript://"
-					class="menubar__button"
-					:class="{ 'is-active': isActive.bullet_list() }"
-					@click="commands.bullet_list"
-				>
-					<img src="/vendor/appoly/laravel-pages/img/wysiwyg/ul.svg">
-				</a>
-				<a
-					href="javascript://"
-					class="menubar__button"
-					:class="{ 'is-active': isActive.ordered_list() }"
-					@click="commands.ordered_list"
-				>
-					<img src="/vendor/appoly/laravel-pages/img/wysiwyg/ol.svg">
-				</a>
-				<a
-					href="javascript://"
-					class="menubar__button"
-					:class="{ 'is-active': isActive.blockquote() }"
-					@click="commands.blockquote"
-				>
-					<img src="/vendor/appoly/laravel-pages/img/wysiwyg/quote.svg">
-				</a>
-				<a
-					href="javascript://"
-					class="menubar__button"
-					:class="{ 'is-active': isActive.code_block() }"
-					@click="commands.code_block"
-				>
-					<img src="/vendor/appoly/laravel-pages/img/wysiwyg/code.svg">
-				</a>
-				<a href="javascript://" class="menubar__button" @click="commands.horizontal_rule">
-					<img src="/vendor/appoly/laravel-pages/img/wysiwyg/hr.svg">
-				</a>
-				<a href="javascript://" class="menubar__button" @click="commands.undo">
-					<img src="/vendor/appoly/laravel-pages/img/wysiwyg/undo.svg">
-				</a>
-				<a href="javascript://" class="menubar__button" @click="commands.redo">
-					<img src="/vendor/appoly/laravel-pages/img/wysiwyg/redo.svg">
-				</a>
-				<a href="javascript://" class="menubar__button" @click="openModal(commands.image);">
-					<img src="/vendor/appoly/laravel-pages/img/wysiwyg/image.svg">
-				</a>
-			</div>
-		</editor-menu-bar>
-		<editor-content class="editor__content" :editor="editor" />
-	</div>
+    <div class="wysiwyg-editor">
+        <Modal ref="ytmodal" @onConfirm="addCommand" />
+        <input :id="name" v-model="htmlContent" type="hidden" :name="name" />
+        <editor-menu-bar v-slot="{ commands, isActive }" :editor="editor">
+            <div class="menubar">
+                <a
+                    href="javascript://"
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.bold() }"
+                    @click="commands.bold"
+                >
+                    <img src="/vendor/appoly/laravel-pages/img/wysiwyg/bold.svg" />
+                </a>
+                <a
+                    href="javascript://"
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.italic() }"
+                    @click="commands.italic"
+                >
+                    <img src="/vendor/appoly/laravel-pages/img/wysiwyg/italic.svg" />
+                </a>
+                <a
+                    href="javascript://"
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.strike() }"
+                    @click="commands.strike"
+                >
+                    <img src="/vendor/appoly/laravel-pages/img/wysiwyg/strike.svg" />
+                </a>
+                <a
+                    href="javascript://"
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.underline() }"
+                    @click="commands.underline"
+                >
+                    <img src="/vendor/appoly/laravel-pages/img/wysiwyg/underline.svg" />
+                </a>
+                <a
+                    href="javascript://"
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.code() }"
+                    @click="commands.code"
+                >
+                    <img src="/vendor/appoly/laravel-pages/img/wysiwyg/code.svg" />
+                </a>
+                <a
+                    href="javascript://"
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.paragraph() }"
+                    @click="commands.paragraph"
+                >
+                    <img src="/vendor/appoly/laravel-pages/img/wysiwyg/paragraph.svg" />
+                </a>
+                <a
+                    href="javascript://"
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.heading({ level: 1 }) }"
+                    @click="commands.heading({ level: 1 })"
+                    >H1</a
+                >
+                <a
+                    href="javascript://"
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.heading({ level: 2 }) }"
+                    @click="commands.heading({ level: 2 })"
+                    >H2</a
+                >
+                <a
+                    href="javascript://"
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.heading({ level: 3 }) }"
+                    @click="commands.heading({ level: 3 })"
+                    >H3</a
+                >
+                <a
+                    href="javascript://"
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.bullet_list() }"
+                    @click="commands.bullet_list"
+                >
+                    <img src="/vendor/appoly/laravel-pages/img/wysiwyg/ul.svg" />
+                </a>
+                <a
+                    href="javascript://"
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.ordered_list() }"
+                    @click="commands.ordered_list"
+                >
+                    <img src="/vendor/appoly/laravel-pages/img/wysiwyg/ol.svg" />
+                </a>
+                <a
+                    href="javascript://"
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.blockquote() }"
+                    @click="commands.blockquote"
+                >
+                    <img src="/vendor/appoly/laravel-pages/img/wysiwyg/quote.svg" />
+                </a>
+                <a
+                    href="javascript://"
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.code_block() }"
+                    @click="commands.code_block"
+                >
+                    <img src="/vendor/appoly/laravel-pages/img/wysiwyg/code.svg" />
+                </a>
+                <a href="javascript://" class="menubar__button" @click="commands.horizontal_rule">
+                    <img src="/vendor/appoly/laravel-pages/img/wysiwyg/hr.svg" />
+                </a>
+                <a href="javascript://" class="menubar__button" @click="commands.undo">
+                    <img src="/vendor/appoly/laravel-pages/img/wysiwyg/undo.svg" />
+                </a>
+                <a href="javascript://" class="menubar__button" @click="commands.redo">
+                    <img src="/vendor/appoly/laravel-pages/img/wysiwyg/redo.svg" />
+                </a>
+                <a href="javascript://" class="menubar__button" @click="openModal(commands.image)">
+                    <img src="/vendor/appoly/laravel-pages/img/wysiwyg/image.svg" />
+                </a>
+            </div>
+        </editor-menu-bar>
+        <editor-content class="editor__content" :editor="editor" />
+    </div>
 </template>
 <script>
-import { Editor, EditorContent, EditorMenuBar } from "tiptap";
-import Modal from "./ImageUpload";
+import { Editor, EditorContent, EditorMenuBar } from 'tiptap';
+import Modal from './ImageUpload';
 import {
     Blockquote,
     Bold,
@@ -145,23 +143,23 @@ import {
     TodoItem,
     TodoList,
     Underline,
-    Image
-} from "tiptap-extensions";
+    Image,
+} from 'tiptap-extensions';
 export default {
     components: {
         EditorContent,
         EditorMenuBar,
-        Modal
+        Modal,
     },
     props: {
         body: {
             type: String,
-            default: ""
+            default: '',
         },
         name: {
             type: String,
-            default: ""
-        }
+            default: '',
+        },
     },
     data() {
         return {
@@ -184,21 +182,21 @@ export default {
                     new Strike(),
                     new Underline(),
                     new History(),
-                    new Image()
+                    new Image(),
                 ],
-                content: "",
+                content: '',
                 onUpdate: ({ getHTML }) => {
                     this.htmlContent = getHTML();
-                }
+                },
             }),
-            htmlContent: ""
+            htmlContent: '',
         };
     },
     watch: {
-        body: function(newVal, oldVal) {
+        body: function (newVal, oldVal) {
             this.editor.setContent(this.body);
             this.htmlContent = this.body;
-        }
+        },
     },
     mounted() {
         if (this.body !== null) {
@@ -220,7 +218,7 @@ export default {
         },
         setContent() {
             this.editor.setContent(this.content);
-        }
-    }
+        },
+    },
 };
 </script>

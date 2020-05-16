@@ -60,7 +60,7 @@ class PagesController extends Controller
     public function show($slug)
     {
         $page = Page::where('slug', $slug)->first();
-        if (!$page) {
+        if (! $page) {
             abort(404, 'Page not found.');
         }
         $page->increment('views');
@@ -122,6 +122,6 @@ class PagesController extends Controller
             Storage::disk('s3')->setVisibility($data['file'], 'public');
         }
 
-        return env('AWS_URL') . $data['file'];
+        return env('AWS_URL').$data['file'];
     }
 }
