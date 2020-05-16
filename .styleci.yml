@@ -8,6 +8,8 @@ php:
       - server.php
 js:
   finder:
+    exclude:
+      - dist
     not-name:
       - webpack.mix.js
 css: true
