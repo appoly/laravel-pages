@@ -10,6 +10,7 @@ js:
   finder:
     exclude:
       - dist
+      -  src/public
     not-name:
       - webpack.mix.js
 css: true
