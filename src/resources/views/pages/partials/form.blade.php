@@ -1,4 +1,4 @@
-@if(!config('disable_header_image'))
+@if(!config('laravel_pages.disable_header_image'))
     <div class="form-row mb-3">
         <div class="col">
             <div class="custom-file">
@@ -14,6 +14,7 @@
         <label for="title">Title</label>
         <input type="text" name="title" id="title" class='form-control' value="{{ isset($page) ? $page->title : '' }}">
     </div>
+    @if(!config('laravel_pages.disable_page_url'))
     <div class="col">
         <label for="url">Page URL</label>
         <div class="input-group mb-2">
@@ -23,6 +24,7 @@
             <input type="text" name="slug" id="slug" class='form-control' value="{{ isset($page) ? $page->slug : '' }}">
         </div>
     </div>
+    @endif
 </div>
 
 @switch(config('laravel_pages.editor'))
