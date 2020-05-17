@@ -18,6 +18,7 @@ return [
     'view_pages_route' => '/page/{slug}',
     'disable_show_route' => false,
     'disable_header_image' => false,
+    'disable_page_url' => false,
 
     /*
     |--------------------------------------------------------------------------
