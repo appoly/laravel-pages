@@ -1,11 +1,13 @@
-<div class="form-row mb-3">
-    <div class="col">
-        <div class="custom-file">
-            <input id="header_image" class="custom-file-input" type="file" name="header_image">
-            <label for="header_image" class="custom-file-label">Header Image</label>
+@if(!config('disable_header_image'))
+    <div class="form-row mb-3">
+        <div class="col">
+            <div class="custom-file">
+                <input id="header_image" class="custom-file-input" type="file" name="header_image">
+                <label for="header_image" class="custom-file-label">Header Image</label>
+            </div>
         </div>
     </div>
-</div>
+@endif
 
 <div class="form-row">
     <div class="col">

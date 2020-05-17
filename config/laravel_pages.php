@@ -17,6 +17,7 @@ return [
     'admin_middle_ware' => ['web', 'auth'],
     'view_pages_route' => '/page/{slug}',
     'disable_show_route' => false,
+    'disable_header_image' => false,
 
     /*
     |--------------------------------------------------------------------------
