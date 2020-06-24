@@ -29,7 +29,7 @@
 
 @switch(config('laravel_pages.editor'))
 @case('tiptap')
-<page-body-editor :body="'{{ isset($page) ? $page->body : '' }}'" name="body"></page-body-editor>
+<page-body-editor :body="'{{ isset($page) ? addslashes($page->body) : '' }}'" name="body"></page-body-editor>
 @break
 @default
 <label for="body">Page Body</label>
