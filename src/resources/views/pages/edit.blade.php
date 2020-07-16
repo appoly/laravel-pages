@@ -1,8 +1,8 @@
 @extends(config('laravel_pages.layout_file'))
 
 @section('scripts')
-<script type="text/javascript" src="{{ @asset('vendor/appoly/laravel-pages/js/app.js') }}" defer></script>
-<link rel="stylesheet" href="{{ @asset('vendor/appoly/laravel-pages/css/app.css') }}">
+<script type="text/javascript" src="{{ asset('vendor/appoly/laravel-pages/js/app.js') }}" defer></script>
+<link rel="stylesheet" href="{{ asset('vendor/appoly/laravel-pages/css/app.css') }}">
 @endsection
 
 @section('content')
