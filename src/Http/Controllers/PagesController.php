@@ -40,9 +40,10 @@ class PagesController extends Controller
     public function store(Request $request)
     {
         if ($files = $request->file('header_image')) {
+            $disk = config('laravel_pages.disk');
             $location = 'laravel_pages/images';
-            $data['file'] = $files->store($location, 's3');
-            Storage::disk('s3')->setVisibility($data['file'], 'public');
+            $data['file'] = $files->store($location, $disk);
+            Storage::disk($disk)->setVisibility($data['file'], 'public');
             $request->merge(['header_image' => $data['file']]);
         }
 
@@ -116,12 +117,14 @@ class PagesController extends Controller
 
     public function imageUpload(Request $request)
     {
+        $disk = config('laravel_pages.disk');
+
         if ($files = $request->file('file')) {
             $location = 'laravel_pages/images';
-            $data['file'] = $files->store($location, 's3');
-            Storage::disk('s3')->setVisibility($data['file'], 'public');
+            $data['file'] = $files->store($location, $disk);
+            Storage::disk($disk)->setVisibility($data['file'], 'public');
         }
 
-        return env('AWS_URL').$data['file'];
+        return Storage::disk($disk)->url($data['file']);
     }
 }

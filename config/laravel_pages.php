@@ -62,22 +62,16 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | S3
+    | Filesystem
     |--------------------------------------------------------------------------
     |
-    | Here you can define your s3 details for image uploads
+    | Here you can define your preferred disk details for image uploads
     | without these details images will not be available
     |
     |
     */
 
-    'AWS_ACCESS_KEY_ID' => env('AWS_ACCESS_KEY_ID', ''),
-
-    'AWS_SECRET_ACCESS_KEY'=> env('AWS_SECRET_ACCESS_KEY', ''),
-
-    'AWS_DEFAULT_REGION'=>env('AWS_DEFAULT_REGION', 'us-east-1'),
-
-    'AWS_BUCKET' => env('AWS_BUCKET', ''),
+    'disk' => 'public',
 
     /*
     |--------------------------------------------------------------------------
