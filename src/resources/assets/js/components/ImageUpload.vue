@@ -25,9 +25,7 @@
                 >
                     Add Image
                 </button>
-                <button class="btn btn-danger" @click="show = false">
-                    Close
-                </button>
+                <button class="btn btn-danger" @click="show = false">Close</button>
             </footer>
         </div>
     </div>
