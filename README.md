@@ -36,7 +36,7 @@ From there you can create and edit your pages. To view your pages you can naviga
 
 These routes are editable via the config file.
 
-If you are removing the `page` part from the config, place this as the last time in your routes file:
+If you are removing the `page` part from the config, place this as the last item in your routes file:
 
 `Route::get(config('laravel_pages.view_pages_route'), '\Appoly\LaravelPages\Http\Controllers\PagesController@show')->name('laravel-pages.show');
 `
